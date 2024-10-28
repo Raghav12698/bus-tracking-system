@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Booking Confirmation</title>
+</head>
+<body>
+    <h2>Booking Confirmation</h2>
+    <p th:text="${message}"></p>
+
+    <h3>Recommendations for Your Route</h3>
+    <div th:if="${recommendations}">
+        <ul>
+            <li th:each="rec : ${recommendations}">
+                <strong th:text="${rec.name}"></strong>: <span th:text="${rec.description}"></span> at <span th:text="${rec.location}"></span>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
